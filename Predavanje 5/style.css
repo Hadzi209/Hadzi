@@ -1,0 +1,20 @@
+body,
+html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.responsive {
+  background-color: gray;
+}
+@media (min-width: 1200px) {
+  .responsive .text-red span {
+    width: 100px;
+  }
+}
+@media (min-width: 1281px) and (max-width: 1280px) {
+  .responsive .text-red span {
+    width: 100px;
+  }
+}/*# sourceMappingURL=style.css.map */

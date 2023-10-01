@@ -1,0 +1,25 @@
+@mixin media($args...) {
+    @media(min-width: $min-width){
+        @content;
+    }
+
+    $query: "";
+
+    @each $trenutnaVrednost in $args {    
+    $op: "";
+
+    @if ($query != ""){
+    $op: " and ";
+    }
+
+
+   $query: $query + $op + trans-media-condition($trenutnaVrednost);
+    }
+
+    @media #{$query} {
+        @content;
+    }
+}
+
+
+

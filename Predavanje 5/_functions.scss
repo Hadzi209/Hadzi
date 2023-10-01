@@ -1,0 +1,16 @@
+@function trans-media-condition($uslov){
+    $listaUslova: (
+        "screen": "screen",
+        "print": "print",
+        ">maxWidth": "(min-width: #{$desktop + 1})",
+        "<maxWidth": "(max-width: #{$desktop})",
+        ">tabletWidth": "(min-width: #{$tablet + 1})",
+        "<tabletWidth": "(max-width: #{$tablet})",
+        ">minWidth": "(min-width: #{$mobile + 1})",
+        "<minWidth": "(max-width: #{$mobile})",
+    );
+
+    @return map-get($listaUslova, $uslov);
+ 
+}
+

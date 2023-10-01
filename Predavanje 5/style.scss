@@ -1,0 +1,24 @@
+@import "variables";
+@import "functions";
+@import "mixins";
+
+
+
+body,
+html {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.responsive {
+    background-color: gray; 
+    
+    .text-red{
+        span{
+            @include media("screen", "print"){
+                width: 100px;
+            }
+        }
+    }
+}

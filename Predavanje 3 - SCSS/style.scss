@@ -1,0 +1,66 @@
+//variables
+$boja: #123456;
+$padding-1: 5px 0px;
+$border: 1px solid black;
+
+//mixins
+@mixin custom-text($specijalnaBoja: #000, $specijalniBorder: none){
+    color: $specijalnaBoja;
+    padding: $padding-1;
+    border: $specijalniBorder;
+}
+
+//styling
+body {
+    background-color: #eee;
+    h1 {
+        color: red;
+        
+    }
+    ul {
+        li{
+            margin: 5px 0px;
+        }
+    }
+}
+
+p.mixin {
+    // pozivanje mixina custom-text
+    @include custom-text($boja);
+}
+
+h1.mixin {
+    // pozivanje mixina custom-text
+    @include custom-text($specijalniBorder: 3px solid orange);
+}
+
+// primer selektora
+
+#lista{
+    li{
+        &.prvi{ //li.prvi
+            color:red;
+        }
+        &#treci{
+            color: green;
+        }
+    }
+}
+
+.list{
+    &-first{ // .list-first
+    &--text-red{
+        color:red;
+    }
+    }
+    &-second{ //list-second
+        color:blue;
+    }
+    &-third{ //.list-third
+        color:magenta;
+    }
+
+    .paragraph{
+        color:maroon;
+    }
+}
